@@ -1,21 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-using ZXing.Net.Mobile.Forms;
 
-namespace App2
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+using ZXing.Net.Mobile.Forms;
+using App2.Models;
+
+namespace App2.Views
 {
-	public partial class MainPage : ContentPage
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class Inventario : ContentPage
 	{
         ZXingScannerPage scanPage;
-		public MainPage()
+        public Inventario()
 		{
+           
 			InitializeComponent();
             btnScann.Clicked += BtnScann_Clicked;
-		}
+            
+            
+        }
 
         private async void BtnScann_Clicked(object sender, EventArgs e)
         {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using App2.Views;
 
 using Xamarin.Forms;
 
@@ -13,7 +14,7 @@ namespace App2
 		{
 			InitializeComponent();
 
-			MainPage = new App2.MainPage();
+			MainPage = new MainPage();
 		}
 
 		protected override void OnStart ()
