@@ -15,7 +15,7 @@ namespace App2.Views
 		public Principal ()
 		{
 			InitializeComponent ();
-            
+			
 		}
 	}
 }

@@ -3,14 +3,14 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ZXing.Net.Mobile.Forms;
-using App2.Models;
+
 
 namespace App2.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Inventario : ContentPage
 	{
-		ZXingScannerPage scanPage;
+		//ZXingScannerPage scanPage;
 		public Inventario()
 		{
 		   
@@ -23,17 +23,20 @@ namespace App2.Views
 
 		private async void BtnScann_Clicked(object sender, EventArgs e)
 		{
-			scanPage = new ZXingScannerPage();
+			var scanPage = new ZXingScannerPage();
 			scanPage.OnScanResult += (result) => {
+				//stop scanning
 				scanPage.IsScanning = false;
 
-				Device.BeginInvokeOnMainThread(() =>
+				//pop the page and show result
+				Device.BeginInvokeOnMainThread(async() =>
 				{
-					Navigation.PopModalAsync();
-					DisplayAlert("Codigo", result.Text, "OK");
+					await Navigation.PopModalAsync();
+					await DisplayAlert("Codigo", result.Text, "OK");
 				});
 			};
 
+			//navega hacia la scannerpage
 			await Navigation.PushModalAsync(scanPage);
 		}
 	}

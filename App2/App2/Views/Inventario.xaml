@@ -1,14 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App2.Views;assembly=App2"
              x:Class="App2.Views.Inventario"
-             Title="Toma de Inventario">
+             Title="Toma de Inventario"
+             Icon="ic_assignment_black_24db.png">
+    
     <ContentPage.Content>
-        <StackLayout>
-            
-            <Button Text="Escanear" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"  x:Name="btnScann"></Button>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+            <Button Text="Escanear"  x:Name="btnScann"></Button>
         </StackLayout>
     </ContentPage.Content>
+        
+    
 
     
     

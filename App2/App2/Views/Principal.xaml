@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App2.Views.Principal">
+             xmlns:local="clr-namespace:App2.Views;assembly=App2"
+             x:Class="App2.Views.Principal"
+             Title="Logística"
+             Icon="ic_local_shipping_black_24db.png">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
             <Label Text="Pagina Principal"
                    FontSize="20"
                 VerticalOptions="CenterAndExpand" 
