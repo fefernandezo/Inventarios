@@ -10,30 +10,30 @@ using App2.Models;
 
 namespace App2.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : MasterDetailPage
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class MainPage : MasterDetailPage
 	{
-       
+	   
 		public MainPage()
 		{
 			InitializeComponent();
-            
-            Master = masterPage;
-            Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(Principal)));
-            masterPage.ListView.ItemSelected += OnItemSelected;
-            MasterBehavior = MasterBehavior.Popover;
+			
+			Master = masterPage;
+			Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(Inventario)));
+			masterPage.ListView.ItemSelected += OnItemSelected;
+			MasterBehavior = MasterBehavior.Popover;
 
-        }
-        private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            var item = e.SelectedItem as MasterPageItem;
-            if (item != null)
-            {
-                Detail = new NavigationPage((Page)Activator.CreateInstance(item.Target));
-                masterPage.ListView.SelectedItem = null;
-                IsPresented = false;
-            }
-        }
+		}
+		private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+		{
+			var item = e.SelectedItem as MasterPageItem;
+			if (item != null)
+			{
+				Detail = new NavigationPage((Page)Activator.CreateInstance(item.Target));
+				masterPage.ListView.SelectedItem = null;
+				IsPresented = false;
+			}
+		}
 
-    }
+	}
 }

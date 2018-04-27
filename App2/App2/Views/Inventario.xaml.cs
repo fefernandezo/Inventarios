@@ -10,30 +10,31 @@ namespace App2.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Inventario : ContentPage
 	{
-        ZXingScannerPage scanPage;
-        public Inventario()
+		ZXingScannerPage scanPage;
+		public Inventario()
 		{
-           
+		   
 			InitializeComponent();
-            btnScann.Clicked += BtnScann_Clicked;
-            
-            
-        }
+			btnScann.Clicked += BtnScann_Clicked;
+			
+			
+			
+		}
 
-        private async void BtnScann_Clicked(object sender, EventArgs e)
-        {
-            scanPage = new ZXingScannerPage();
-            scanPage.OnScanResult += (result) => {
-                scanPage.IsScanning = false;
+		private async void BtnScann_Clicked(object sender, EventArgs e)
+		{
+			scanPage = new ZXingScannerPage();
+			scanPage.OnScanResult += (result) => {
+				scanPage.IsScanning = false;
 
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    Navigation.PopModalAsync();
-                    DisplayAlert("Codigo", result.Text, "OK");
-                });
-            };
+				Device.BeginInvokeOnMainThread(() =>
+				{
+					Navigation.PopModalAsync();
+					DisplayAlert("Codigo", result.Text, "OK");
+				});
+			};
 
-            await Navigation.PushModalAsync(scanPage);
-        }
-    }
+			await Navigation.PushModalAsync(scanPage);
+		}
+	}
 }

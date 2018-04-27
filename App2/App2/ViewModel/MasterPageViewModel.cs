@@ -29,8 +29,8 @@ namespace App2.ViewModel
             Items.Add(new MasterPageItem
             {
                 Title = "Inventario",
-                Icon = "document.png",
-                Target = typeof(Inventario)
+                Icon = "icon.png",
+                Target = typeof(Inventario),
             });
            
         }
